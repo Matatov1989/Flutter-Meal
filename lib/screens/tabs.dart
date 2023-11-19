@@ -6,7 +6,6 @@ import 'package:meal_app/providers/meals_provider.dart';
 import 'package:meal_app/screens/categories.dart';
 import 'package:meal_app/screens/filters.dart';
 import 'package:meal_app/screens/meals.dart';
-import 'package:meal_app/models/meal.dart';
 import 'package:meal_app/widgets/main_drawer.dart';
 
 const kInitialFilters = {
@@ -28,15 +27,6 @@ class TabsScreen extends ConsumerStatefulWidget {
 class _TabsScreenState extends ConsumerState<TabsScreen> {
   int _selectedPageIndex = 0;
   Map<Filter, bool> _selectedFilters = kInitialFilters;
-
-  void _showInfoMessage(String message) {
-    ScaffoldMessenger.of(context).clearSnackBars();
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-      ),
-    );
-  }
 
   void _selectPage(int index) {
     setState(() {
